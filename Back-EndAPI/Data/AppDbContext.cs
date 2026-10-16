@@ -158,6 +158,8 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.HasDefaultSchema("advanced_frontend_class");
+        
         modelBuilder.Entity<Album>(entity =>
         {
             entity.HasKey(e => e.Albumid).HasName("idx_16944_ipk_album");

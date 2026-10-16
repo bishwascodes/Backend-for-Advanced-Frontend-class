@@ -72,7 +72,10 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp", policy =>
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(
+                  "http://localhost:5173",   // React (Vite)
+                  "https://localhost:7090",  // Blazor Front-EndAPI (https)
+                  "http://localhost:5079")   // Blazor Front-EndAPI (http)
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
